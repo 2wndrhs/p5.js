@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-block-size: 100dvh;
+  margin: 0;
+  overflow: hidden;
+  background: #222222;
+}
+
+main {
+  display: grid;
+  place-items: center;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+canvas {
+  inline-size: min(100%, 600px) !important;
+  block-size: auto !important;
+  display: block;
+}

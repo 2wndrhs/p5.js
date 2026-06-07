@@ -1,0 +1,146 @@
+:root {
+  color-scheme: light;
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --line: #d9dee7;
+  --line-soft: #eceff4;
+  --label: #f1f3f7;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-block-size: 100dvh;
+  margin: 0;
+  padding: clamp(20px, 4vw, 44px);
+  color: var(--text);
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+  background: var(--bg);
+}
+
+.hero,
+#projects {
+  width: min(100%, 1120px);
+  margin-inline: auto;
+}
+
+.hero {
+  margin-block-end: 20px;
+  padding-block-end: 18px;
+  border-block-end: 1px solid var(--line);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+}
+
+#projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 2vw, 20px);
+}
+
+.project-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-inline-size: 0;
+  padding: clamp(12px, 1.8vw, 18px);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+}
+
+.card-copy {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-block-end: 12px;
+}
+
+.assignment-number {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 5px 9px;
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: clamp(0.78rem, 1.2vw, 0.9rem);
+  font-weight: 700;
+  line-height: 1;
+  background: var(--label);
+}
+
+h2 {
+  max-inline-size: 20ch;
+  margin: 0;
+  font-size: clamp(1rem, 1.7vw, 1.28rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+  text-align: right;
+  word-break: keep-all;
+}
+
+.frame-wrap {
+  position: relative;
+  inline-size: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border: 1px solid var(--line-soft);
+  border-radius: 14px;
+  background: #f9fafb;
+}
+
+.frame-wrap iframe {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  border: 0;
+  background: transparent;
+}
+
+@media (max-width: 720px) {
+  body {
+    padding: 14px;
+  }
+
+  .hero {
+    margin-block-end: 14px;
+    padding-block-end: 14px;
+  }
+
+  #projects {
+    gap: 10px;
+  }
+
+  .project-card {
+    padding: 10px;
+    border-radius: 14px;
+  }
+
+  .card-copy {
+    display: grid;
+    gap: 8px;
+  }
+
+  h2 {
+    max-inline-size: none;
+    text-align: left;
+  }
+
+  .frame-wrap {
+    border-radius: 10px;
+  }
+}
